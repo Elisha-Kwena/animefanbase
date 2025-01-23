@@ -1,0 +1,623 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    width: 100%;
+    margin: 0;
+    background-color: #121111;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+/* ===============================header============================ */
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    position: fixed;
+    padding: 10px;
+    background-color: #000000;
+    z-index: 10;
+}
+header .rightheader .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .leftheader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .logo{
+    padding: 10px;
+ 
+    /* background-color: red; */
+    align-self: center;
+}
+header .logo a h2{
+    font-family: fantasy;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #ffffff;
+    padding: 0 10px;
+}
+header .logo a h2 span{
+    /* color: rgb(7, 176, 214) ; */
+    color: #e407f4;
+    font-size: 50px;
+}
+header .search{
+    background-color: white;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    align-self:center;
+    border-radius: 25px;
+    background-color: #484848;
+    padding: 6px;
+    border: 2px solid#b5b5b5;
+}
+.search input{
+    padding: 5px;
+    margin-left: 10px;
+    width: 90%;
+    border: none;
+    background-color: transparent;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    font-weight: 600;
+}
+.search img{
+    width: 30px;
+}
+.search input::placeholder{
+    color: #ffffff;
+}
+.search input:focus{
+    outline: none;
+}
+header .nav .notifications{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 30px;
+}
+header .nav .notifications img{
+    width: 35px;
+}
+header .nav .notifications a{
+    margin-right: 40px;
+    position: relative;
+}
+header .nav .notifications a span{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: #e407f4;
+    color: #ffffff;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    top: -5px;
+    font-size: 10px;
+    right: -3px;
+}
+header .nav .notifications button{
+    border: none;
+    background-color: transparent;
+}
+header .nav .notifications button img{
+    width: 40px;
+}
+header .profile{
+    margin-right: 10px;
+    /* background-color: rgb(7, 176, 214); */
+    background-color: #484848;
+    border-radius: 25px;
+    /* border-radius: 4px; */
+}
+header .profile img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.profile ul{
+    list-style: none;
+}
+.profile ul li{
+    width: 100%;
+    position: relative;
+    padding: 5px;
+}
+.profile ul li .user{
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile ul li .user h2{
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0 10px;
+}
+.profile ul li .user .drop{
+    transition: .5s;
+}
+.profile ul li .user:hover .drop{
+    transform: rotate(180deg);
+}
+.profile ul li .dropdown li a{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    transition: .5s;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #000000;
+}
+.profile ul li .dropdown li a h2{
+    text-align: center;
+    transition: .5s;
+    font-size: 16px;
+    color: #ffffff;
+}
+.profile ul li .dropdown li a:hover{
+    background-color: #ffffff;
+    
+}
+
+.profile ul li .dropdown li a:hover h2{
+    color: #484848;
+}
+.profile ul li .dropdown{
+    display: none;
+    width: 100%;
+    padding-top: 30px;
+    position: absolute;
+    top: 25px;
+    z-index: -5;
+    left: 0;
+    background-color: #484848;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: .5s !important;
+}
+
+.profile ul li:hover .dropdown{
+    display: block;
+}
+/* ====================================================================== main contents================================================================================= */
+main{
+    width: 100%;
+    padding-top: 80px;
+}
+.contents{
+    width: 100%;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+}
+/* ====================================================================================left===================================================================== */
+
+.contents .leftsidebar{
+    width: 23%;
+    position: fixed;
+    left: 0;
+    align-items:flex-start;
+    padding: 0 20px 20px 20px;
+    /* height: 100vh; */
+   
+}
+.leftsidebar h1{
+    color: #ffffff;
+    text-transform: capitalize;
+    margin: 5px 0;
+}
+.leftsidebar .menu{
+    padding: 1px;
+}
+.leftsidebar .menu .link,
+.leftsidebar .menu a{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    transition: .5s;
+    padding: 7px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.leftsidebar .menu .active{
+    background-image: linear-gradient(90deg, #b000ef 0%, #fd00ff 58%, #ffbf47 100%, #ef4706 100%);
+    margin-bottom: 20px;
+}
+.menu ul li h3:hover,
+.menu .link:hover,
+.leftsidebar .menu a:hover{
+    background-image: linear-gradient(90deg, #b000ef 0%, #fd00ff 58%, #ffbf47 100%, #ef4706 100%);
+    
+}
+
+.leftsidebar .menu .link img,
+.leftsidebar .menu a img{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    display: block;
+    margin: auto 0;
+    margin-right: 30px;
+    box-shadow: 0px -2px 3px 0 rgb(226, 226, 226,0.9);
+}
+.leftsidebar .menu h2{
+    color: #b5b5b5;
+    font-size: 16px;
+}
+.leftsidebar .menu ul{
+    list-style: none;
+    /* background-color: rgb(164, 146, 146); */
+}
+.leftsidebar .menu ul li{
+    position: relative;
+    transition: .5s !important;
+}
+.leftsidebar .menu ul li .dropmenu{
+    /* background-color: yellow; */
+    position: relative;
+    width: 75%;
+    align-self: right;
+    margin-left: 25%;
+    display: none;
+}
+.leftsidebar .menu ul li .dropmenu li h3{
+    color: #ffffff;
+    font-size: 16px;
+    padding: 7px;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: .5s;
+}
+.leftsidebar .menu ul li .dropmenu li a{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
+.leftsidebar .menu ul li:hover .dropmenu{
+    display: block;
+    transition: .5s;
+}
+.leftsidebar .menu ul li .dropmenu li .subdrop{
+    /* background-color: red; */
+    position: relative;
+    width: 75%;
+    align-self: right;
+    margin-left: 25%;
+    display: none;
+}
+.leftsidebar .menu ul li .dropmenu li:hover .subdrop{
+    display: block;
+    transition: .5s;
+}
+/* ====================================================================================middle===================================================================== */
+
+.contents .middlecontainer{
+    width: 54%;
+    margin-left: 23%;
+    padding: 10px;
+}
+.middlecontainer .frameone{
+    width: 100%;
+    background-color: red;
+    border-radius: 5px;
+    height: 450px;
+    position: relative;
+    background-image: url(/animefanbase/images/demonslayer.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    animation-name: slide;
+    animation-duration: 20s;
+    animation-delay: 4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+@keyframes slide{
+    0%{
+        background-image: url(/animefanbase/images/demonslayer.jpg);
+    }
+    20%{
+        background-image: url(/animefanbase/images/onepunch.jpg);
+    }
+    40%{
+        background-image: url(/animefanbase/images/saaske.jpg);
+    }
+    60%{
+        background-image: url(/animefanbase/images/kakashi.jpg);
+    }
+    80%{
+        background-image: url(/animefanbase/images/zen.jpg);
+    }
+    100%{
+        background-image: url(/animefanbase/images/deathnote.jpg);
+    }
+}
+.frameone .content{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.frameone .content p{
+    
+    color: #ffffff;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+.frameone .content button{
+    width: 30%;
+    padding: 7px 10px;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: fantasy;
+    border: none;
+    border-radius: 30px;
+    color: #e600b8;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid #e600b8;
+}
+.middlecontainer .categories{
+    width: 100%;
+}
+.middlecontainer .categories h1{
+    color: #cf0e9c;
+    margin-top: 5px;
+    font-size: 18px;
+}
+.middlecontainer .categories{
+    /* display: flex; */
+    /* width: 100%; */
+    /* align-items: center;
+    justify-content: space-between;
+    overflow-x: scroll; */
+}
+.middlecontainer .categories .animes::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+.middlecontainer .categories .animes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: scroll;
+}
+.middlecontainer .categories .animes .anime{
+    min-width: 32%;
+    border-radius: 5px;
+    height: 155px;
+    cursor: pointer;
+    margin: 0 5px;
+    position: relative;
+    overflow: hidden;
+}
+.middlecontainer .categories .animes .anime h2{
+    position: absolute;
+    color: #ff00e1;
+    font-family:fantasy,Verdana, sans-serif;
+    text-align: center;
+    font-weight: 200;
+    top: -20%;
+    transition: .5s;
+    left: 20%;
+}
+.middlecontainer .categories .animes .anime:hover h2{
+    top: 50%;
+}
+.middlecontainer .categories .animes .anime img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: top;
+}
+.middlecontainer .browse{
+    width: 100%;
+}
+.middlecontainer .browse h1{
+    color: #cf0e9c;
+    margin-top: 5px;
+    font-size: 18px;
+}
+.middlecontainer .browse .browselist{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.middlecontainer .browse .browselist .item{
+    width: 24%;
+    height: 160px;
+    border-radius: 5px;
+    position: relative;
+}
+.middlecontainer .browse .browselist .item .display{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+}
+.middlecontainer .browse .browselist .item:hover .display{
+    opacity: 1;
+}
+.middlecontainer .browse .browselist .item:hover .back{
+    opacity: 0.4;
+}
+.middlecontainer .browse .browselist .item .display img{
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 10px auto;
+    object-fit: contain;
+    transition: .5s;
+}
+.middlecontainer .browse .browselist .item .display h2{
+    text-align: center;
+    margin-top: 20px;
+    color: #e407f4;
+    font-weight: 900;
+    font-family: fantasy;
+    font-size: 35px;
+}
+.middlecontainer .browse .browselist .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+/* ==========================================================================================right========================================================================= */
+.contents .rightsidebar{
+    width: 23%;
+    padding: 10px;
+    align-items: top;
+}
+.rightsidebar .trending{
+    width: 100%;
+    background-color: #484848;
+    border-radius: 5px;
+}
+.rightsidebar .trending .toptrending{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.rightsidebar .trending .toptrending h1{
+    color: #ffffff;
+    text-transform: capitalize;
+}
+.rightsidebar .trending .toptrending button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.rightsidebar .trending .toptrending button h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: #e407f4;
+}
+.rightsidebar .trending .toptrending button img{
+    transform: rotate(-90deg);
+    width: 25px;
+    z-index: 0;
+    margin-left: 10px;
+}
+.rightsidebar .trending .trends{
+    width: 100%;
+    max-height: 400px;
+    overflow-y: scroll;
+    background-color: rgb(64, 62, 62);
+    border-radius: 5px;
+}
+.rightsidebar .trending .trends .trent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.rightsidebar .trending .trends .trent{
+    width: 100%;
+    position: relative;
+}
+.trent .person{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.trent .person img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+.trent .person .details{
+    margin-left: 10px;
+}
+.trent .person .details h3{
+    font-size: 20px;
+    color: #ffffff;
+}
+.trent .person .details p{
+    font-size: 16px;
+    color: #a3a3a3;
+}
+.trent .on,
+.trent .off{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 15px;left: 40px;
+}
+.trent .on{
+    background-color: #e407f4
+}
+.trent .off{
+    background-color: #160716
+}
+
+.trent .follow button{
+    padding:5px 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 16px;
+    border: none;
+    color: #ffffff;
+    border-radius: 25px;
+    background-color: #000000;
+    cursor: pointer;
+}
+.trent .follow .notfollowing{
+    background-color: #0916c4;
+}
+.rightsidebar img{
+    width: 30px;
+}
+/* ====================================================topcreators======================================== */
+.topcreators{
+    margin-top: 20px;
+}
+.rightsidebar .topcreators .trends{
+    height: 300px;
+    overflow-y: scroll;
+}
+.rightsidebar .topcreators .trends .trent .creations h2{
+    color: #7f7f7f;
+}
